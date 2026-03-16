@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anonymous TTS Demo</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #1f2937;
+      --text-secondary: #6b7280;
+      --accent: #4f46e5;
+      --accent-light: #eef2ff;
+      --accent-hover: #4338ca;
+      --tag-bg: #f3f4f6;
+      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.07);
+      --radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Header ===== */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 48px;
+      background: linear-gradient(160deg, #eef2ff 0%, #faf5ff 50%, #fdf2f8 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .hero .subtitle {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 999px;
+    }
+
+    /* ===== Abstract ===== */
+    .abstract-section {
+      max-width: 820px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+    }
+    .abstract-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+    }
+    .abstract-card h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .abstract-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ===== Main Content ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ===== Section Title ===== */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .section-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    /* ===== Sample Card ===== */
+    .sample-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+      transition: box-shadow .2s;
+    }
+    .sample-card:hover { box-shadow: var(--shadow-md); }
+
+    .sample-card .text-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .sample-card .text-content {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding: 12px 16px;
+      background: var(--tag-bg);
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+
+    /* ===== Audio Grid ===== */
+    .audio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .audio-item {
+      background: var(--tag-bg);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      transition: background .15s;
+    }
+    .audio-item:hover { background: #eef0f4; }
+    .audio-item .system-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .audio-item audio {
+      width: 100%;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    /* ===== Tabs ===== */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color .15s, border-color .15s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      font-weight: 600;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 16px 36px; }
+      .hero h1 { font-size: 1.6rem; }
+      .audio-grid { grid-template-columns: 1fr; }
+      .sample-card { padding: 20px; }
+      .tab-btn { padding: 8px 14px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="badge">Anonymous Submission</div>
+    <h1>Your Paper Title Here</h1>
+    <p class="subtitle">
+      Audio samples for the paper: <em>"Your Paper Title Here"</em>, submitted to [Conference Name] 2026.
+    </p>
+  </header>
+
+  <!-- Abstract -->
+  <section class="abstract-section">
+    <div class="abstract-card">
+      <h2>Abstract</h2>
+      <p>
+        Paste your paper abstract here. This section provides a brief overview of your work, 
+        including the motivation, proposed method, and key results. Replace this placeholder 
+        text with the actual abstract of your paper.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="container">
+
+    <!-- Tabs -->
+    <div class="tab-bar" id="tabBar">
+      <button class="tab-btn active" data-tab="tab-comparison">System Comparison</button>
+      <button class="tab-btn" data-tab="tab-ablation">Ablation Study</button>
+    </div>
+
+    <!-- Tab 1: System Comparison -->
+    <div class="tab-content active" id="tab-comparison">
+      <h2 class="section-title">System Comparison</h2>
+      <p class="section-desc">Comparing our proposed method against baseline systems. All samples are synthesized from the same text input.</p>
+
+      <!-- Sample 1 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">
+          The quick brown fox jumps over the lazy dog near the riverbank on a warm summer afternoon.
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name">Ground Truth</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample1/gt.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Proposed</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample1/proposed.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline A</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample1/baseline_a.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline B</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample1/baseline_b.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline C</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample1/baseline_c.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">
+          She sells seashells by the seashore, and the shells she sells are seashells, I'm sure.
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name">Ground Truth</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample2/gt.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Proposed</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample2/proposed.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline A</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample2/baseline_a.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline B</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample2/baseline_b.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline C</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample2/baseline_c.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 3 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">
+          In the heart of the ancient city, towering spires rise against the twilight sky, casting long shadows over cobblestone streets.
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name">Ground Truth</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample3/gt.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Proposed</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample3/proposed.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline A</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample3/baseline_a.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline B</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample3/baseline_b.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Baseline C</div>
+            <audio controls preload="none">
+              <source src="audios/comparison/sample3/baseline_c.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tab 2: Ablation Study -->
+    <div class="tab-content" id="tab-ablation">
+      <h2 class="section-title">Ablation Study</h2>
+      <p class="section-desc">Investigating the contribution of individual components in our proposed method.</p>
+
+      <!-- Ablation Sample 1 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">
+          The quick brown fox jumps over the lazy dog near the riverbank on a warm summer afternoon.
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name">Full Model</div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/full.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">w/o Module A</div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/wo_a.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">w/o Module B</div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/wo_b.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">w/o Module C</div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/wo_c.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Anonymous Demo Page &mdash; Submitted to [Conference Name] 2026</p>
+  </footer>
+
+  <script>
+    // Tab switching
+    const tabBar = document.getElementById('tabBar');
+    tabBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.tab-btn');
+      if (!btn) return;
+      // deactivate all
+      tabBar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      // activate clicked
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  </script>
+</body>
+</html>
