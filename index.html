@@ -485,7 +485,6 @@
     <!-- Tabs -->
     <div class="tab-bar" id="tabBar">
       <button class="tab-btn active" data-tab="tab-comparison">System Comparison</button>
-      <button class="tab-btn" data-tab="tab-ablation">Ablation Study</button>
     </div>
 
     <!-- Tab 1: System Comparison -->
@@ -662,14 +661,14 @@
       </div>
 
       <!-- Sample 7: Sage (F), Neutral → Fearful -->
-      <!-- <div class="sample-card">
+      <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 7 — replace with your actual text.</div>
+        <div class="text-content">Sample text 7 — She jumped at the shadow and then felt true terror as it moved closer.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
-              <span class="emo-tag">Neutral</span>
+              <span class="emo-tag">Surprised</span>
               <span class="emo-arrow">&#10230;</span>
               <span class="emo-tag">Fearful</span>
             </div>
@@ -680,26 +679,26 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample7/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample7/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample7/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample7/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample7/a-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample7/b-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample7/c-emov.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample7/d-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample7/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample7/g.wav" type="audio/wav"></audio></div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Sample 8: Ash (M), Happy → Fearful -->
-      <!-- <div class="sample-card">
+      <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 8 — replace with your actual text.</div>
+        <div class="text-content">Sample text 8 — She smiled at the gift but reading the mocking note inside made her rage.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
               <span class="emo-tag">Happy</span>
               <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Fearful</span>
+              <span class="emo-tag">Angry</span>
             </div>
           </div>
           <div class="tag-group">
@@ -708,65 +707,14 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample8/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample8/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample8/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample8/a-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-qwen.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample8/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample8/g.wav" type="audio/wav"></audio></div>
         </div>
-      </div> -->
-
-    </div>
-
-    <!-- Tab 2: Ablation Study -->
-    <!-- <div class="tab-content" id="tab-ablation">
-      <h2 class="section-title">Ablation Study</h2>
-      <p class="section-desc">Investigating the contribution of individual components in our proposed method.</p> -->
-
-      <!-- Ablation Sample 1 -->
-      <!-- <div class="sample-card">
-        <div class="text-label">Text</div>
-        <div class="text-content">
-          The quick brown fox jumps over the lazy dog near the riverbank on a warm summer afternoon.
-        </div>
-        <div class="emotion-label">Emotion Transition</div>
-        <div class="emotion-transition">
-          <span class="emo-tag">Neutral</span>
-          <span class="emo-arrow">&#10230;</span>
-          <span class="emo-tag">Happy</span>
-        </div>
-        <div class="audio-grid">
-          <div class="audio-item">
-            <div class="system-name">Full Model</div>
-            <span class="method-tag tag-vad">VAD</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/full.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">w/o Module A</div>
-            <span class="method-tag tag-vad">VAD</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/wo_a.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">w/o Module B</div>
-            <span class="method-tag tag-vad">VAD</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/wo_b.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">w/o Module C</div>
-            <span class="method-tag tag-vad">VAD</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/wo_c.wav" type="audio/wav">
-            </audio>
-          </div>
-        </div>
-      </div> -->
+      </div>
 
     </div>
 
