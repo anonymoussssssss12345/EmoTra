@@ -386,6 +386,22 @@
       color: var(--text-secondary);
       font-size: 0.73rem;
     }
+    .legend-item .legend-systems {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .legend-item .legend-systems .sys-chip {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--accent-light);
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
 
     .legend-toggle {
       display: none;
@@ -449,7 +465,7 @@
     <div class="badge">Anonymous Submission</div>
     <h1>EmoTra-TTS Demo Page</h1>
     <p class="subtitle">
-      Audio samples for the paper: <em>"EmoTra-TTS: Smooth Intra-Utterance Emotion Transitions for Speech Synthesis"</em>, submitted to ARR 2026 March.
+      Audio samples for the paper: <em>"EmoTra-TTS: Smooth Intra-Utterance Emotion Transitions for Speech Synthesis"</em>, submitted to ARR March 2026.
     </p>
   </header>
 
@@ -508,14 +524,14 @@
       <!-- Sample 2: Ash (M), Sad → Angry -->
       <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 2 — replace with your actual text.</div>
+        <div class="text-content">Sample text 2 — He joked with his neighbor but learning about the old dog passing crushed him.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
-              <span class="emo-tag">Sad</span>
+              <span class="emo-tag">Happy</span>
               <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Angry</span>
+              <span class="emo-tag">Sad</span>
             </div>
           </div>
           <div class="tag-group">
@@ -524,12 +540,12 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample2/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample2/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample2/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample2/d.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample2/f.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample2/g.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample2/a-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample2/b-qwen.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample2/d-MOSS.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-leve</span><audio controls preload="none"><source src="audios/comparison/sample2/wescon.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample2/f-sys.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample2/g-Emotra.wav" type="audio/wav"></audio></div>
         </div>
       </div>
 
@@ -552,10 +568,10 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample3/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample3/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample3/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample3/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample3/a-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample3/c-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample3/d-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-level</span><audio controls preload="none"><source src="audios/comparison/sample3/e.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample3/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample3/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -564,14 +580,14 @@
       <!-- Sample 4: Ash (M), Happy → Sad -->
       <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 4 — replace with your actual text.</div>
+        <div class="text-content">Sample text 4 — His furious shouting stopped when a strange shadow made his blood run cold.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
-              <span class="emo-tag">Happy</span>
+              <span class="emo-tag">Angry</span>
               <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Sad</span>
+              <span class="emo-tag">Fearful</span>
             </div>
           </div>
           <div class="tag-group">
@@ -580,10 +596,10 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample4/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample4/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample4/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample4/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample4/a-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample4/b-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample4/c-emov.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample4/d-qwen.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample4/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample4/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -592,14 +608,14 @@
       <!-- Sample 5: Sage (F), Sad → Surprised -->
       <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 5 — replace with your actual text.</div>
+        <div class="text-content">Sample text 5 — He cursed at the jammed printer and then chuckled when it suddenly worked again.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
-              <span class="emo-tag">Sad</span>
+              <span class="emo-tag">Angry</span>
               <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Surprised</span>
+              <span class="emo-tag">Happy</span>
             </div>
           </div>
           <div class="tag-group">
@@ -608,10 +624,10 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample5/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample5/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample5/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample5/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample5/a-qwen.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample5/b-qwen3.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample5/c-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample5/d-qwen.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample5/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample5/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -620,14 +636,14 @@
       <!-- Sample 6: Ash (M), Angry → Surprised -->
       <div class="sample-card">
         <div class="text-label">Text</div>
-        <div class="text-content">Sample text 6 — replace with your actual text.</div>
+        <div class="text-content">Sample text 6 — He felt surprised at the unexpected award, then sadness when he realized a friend was overlooked.</div>
         <div class="tag-row">
           <div class="tag-group">
             <div class="emotion-label">Emotion Transition</div>
             <div class="emotion-transition">
-              <span class="emo-tag">Angry</span>
-              <span class="emo-arrow">&#10230;</span>
               <span class="emo-tag">Surprised</span>
+              <span class="emo-arrow">&#10230;</span>
+              <span class="emo-tag">Sad</span>
             </div>
           </div>
           <div class="tag-group">
@@ -636,17 +652,17 @@
           </div>
         </div>
         <div class="audio-grid">
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample6/a.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample6/b.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample6/c.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">System Name</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample6/d.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample6/b-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample6/c-emovoice.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample6/d-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-level</span><audio controls preload="none"><source src="audios/comparison/sample6/e.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample6/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample6/g.wav" type="audio/wav"></audio></div>
         </div>
       </div>
 
       <!-- Sample 7: Sage (F), Neutral → Fearful -->
-      <div class="sample-card">
+      <!-- <div class="sample-card">
         <div class="text-label">Text</div>
         <div class="text-content">Sample text 7 — replace with your actual text.</div>
         <div class="tag-row">
@@ -671,10 +687,10 @@
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample7/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample7/g.wav" type="audio/wav"></audio></div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Sample 8: Ash (M), Happy → Fearful -->
-      <div class="sample-card">
+      <!-- <div class="sample-card">
         <div class="text-label">Text</div>
         <div class="text-content">Sample text 8 — replace with your actual text.</div>
         <div class="tag-row">
@@ -699,17 +715,17 @@
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample8/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample8/g.wav" type="audio/wav"></audio></div>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
     <!-- Tab 2: Ablation Study -->
-    <div class="tab-content" id="tab-ablation">
+    <!-- <div class="tab-content" id="tab-ablation">
       <h2 class="section-title">Ablation Study</h2>
-      <p class="section-desc">Investigating the contribution of individual components in our proposed method.</p>
+      <p class="section-desc">Investigating the contribution of individual components in our proposed method.</p> -->
 
       <!-- Ablation Sample 1 -->
-      <div class="sample-card">
+      <!-- <div class="sample-card">
         <div class="text-label">Text</div>
         <div class="text-content">
           The quick brown fox jumps over the lazy dog near the riverbank on a warm summer afternoon.
@@ -750,14 +766,14 @@
             </audio>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
   </main>
 
   <footer>
-    <p>Anonymous Demo Page &mdash; Submitted to [Conference Name] 2026</p>
+    <p>Anonymous Demo Page for EmoTra-TTS</p>
   </footer>
 
   <!-- Legend Toggle (mobile) -->
@@ -768,23 +784,59 @@
     <h3>System Legend</h3>
     <div class="legend-item">
       <div class="legend-key key-a">a</div>
-      <div class="legend-text"><strong>Neutral Prompt Speech Only</strong><br><span>Neutral prompt speech; no emotion conditioning</span></div>
+      <div class="legend-text">
+        <strong>Neutral Prompt Speech Only</strong><br>
+        <span>Neutral prompt speech; no emotion conditioning</span>
+        <div class="legend-systems">
+          <span class="sys-chip">Qwen3-TTS</span>
+          <span class="sys-chip">MOSS-TTS</span>
+          <span class="sys-chip">CosyVoice2</span>
+        </div>
+      </div>
     </div>
     <div class="legend-item">
       <div class="legend-key key-b">b</div>
-      <div class="legend-text"><strong>Instruct Only; No Speaker Info.</strong><br><span>Natural-language emotion instruction; no speaker information</span></div>
+      <div class="legend-text">
+        <strong>Instruct Only; No Speaker Info.</strong><br>
+        <span>Natural-language emotion instruction; no speaker information</span>
+        <div class="legend-systems">
+          <span class="sys-chip">Qwen3-TTS</span>
+          <span class="sys-chip">MOSS-TTS</span>
+        </div>
+      </div>
     </div>
     <div class="legend-item">
       <div class="legend-key key-c">c</div>
-      <div class="legend-text"><strong>Instruct + Neutral Prompt Speech</strong><br><span>Natural-language emotion instruction with neutral prompt speech</span></div>
+      <div class="legend-text">
+        <strong>Instruct + Neutral Prompt Speech</strong><br>
+        <span>Natural-language emotion instruction with neutral prompt speech</span>
+        <div class="legend-systems">
+          <span class="sys-chip">CosyVoice2</span>
+          <span class="sys-chip">EmoVoice</span>
+        </div>
+      </div>
     </div>
     <div class="legend-item">
       <div class="legend-key key-d">d</div>
-      <div class="legend-text"><strong>Emo Prompt Speech + Concat</strong><br><span>Generate each emotion segment separately, then concatenate</span></div>
+      <div class="legend-text">
+        <strong>Emo Prompt Speech + Concat</strong><br>
+        <span>Generate each emotion segment separately, then concatenate</span>
+        <div class="legend-systems">
+          <span class="sys-chip">Qwen3-TTS</span>
+          <span class="sys-chip">MOSS-TTS</span>
+          <span class="sys-chip">CosyVoice2</span>
+        </div>
+      </div>
     </div>
     <div class="legend-item">
       <div class="legend-key key-e">e</div>
-      <div class="legend-text"><strong>Emo Prompt Speech + Word-level</strong><br><span>Word-level emotion generation control</span></div>
+      <div class="legend-text">
+        <strong>Emo Prompt Speech + Word-level</strong><br>
+        <span>Word-level emotion generation control</span>
+        <div class="legend-systems">
+          <span class="sys-chip">WeSCon</span>
+        </div>
+      </div>
     </div>
     <div class="legend-item">
       <div class="legend-key key-f">f</div>
