@@ -291,6 +291,24 @@
       height: 36px;
       border-radius: 6px;
     }
+    .volume-warn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 5px;
+      padding: 2px 8px;
+      margin-bottom: 6px;
+      animation: pulse-warn 2s ease-in-out infinite;
+    }
+    @keyframes pulse-warn {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
 
     /* ===== Tabs ===== */
     .tab-bar {
@@ -569,10 +587,10 @@
         <div class="audio-grid">
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-a">(a) Neutral Prompt Speech Only</span><audio controls preload="none"><source src="audios/comparison/sample3/a-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample3/c-cy2.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample3/d-moss.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/d-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-level</span><audio controls preload="none"><source src="audios/comparison/sample3/e.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample3/f.wav" type="audio/wav"></audio></div>
-          <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample3/g.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/f.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/g.wav" type="audio/wav"></audio></div>
         </div>
       </div>
 
