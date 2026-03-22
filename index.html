@@ -286,6 +286,47 @@
     .method-tag.tag-instruct  { background: #dcfce7; color: #166534; }
     .method-tag.tag-prompt    { background: #fef3c7; color: #92400e; }
     .method-tag.tag-none      { background: #f3f4f6; color: #6b7280; }
+    /* Injection architecture tags */
+    .arch-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .arch-tag.arch-linear     { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .arch-tag.arch-mlplora    { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+    .arch-tag.arch-mlpadd     { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .arch-tag.arch-film       { background: #fce7f3; color: #9d174d; border: 1px solid #f9a8d4; }
+    .arch-tag.arch-normclamp  { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+    .arch-tag.arch-dirmag     { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; font-weight: 700; }
+    /* Dual-Stage SFT tags */
+    .sft-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .sft-tag.sft-woflow   { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .sft-tag.sft-emotra    { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; font-weight: 700; }
+    /* Epsilon tags */
+    .eps-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .eps-tag.eps-004  { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+    .eps-tag.eps-010  { background: #fce7f3; color: #9d174d; border: 1px solid #f9a8d4; }
+    .eps-tag.eps-007  { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; font-weight: 700; }
     .audio-item audio {
       width: 100%;
       height: 36px;
@@ -503,6 +544,8 @@
     <!-- Tabs -->
     <div class="tab-bar" id="tabBar">
       <button class="tab-btn active" data-tab="tab-comparison">System Comparison</button>
+      <button class="tab-btn" data-tab="tab-ablation">Injection Architecture Comparison</button>
+      <button class="tab-btn" data-tab="tab-ablation2">Ablation</button>
     </div>
 
     <!-- Tab 1: System Comparison -->
@@ -736,6 +779,204 @@
 
     </div>
 
+    <!-- Tab 2: Injection Architecture Comparison -->
+    <div class="tab-content" id="tab-ablation">
+      <h2 class="section-title">Injection Architecture Comparison</h2>
+      <p class="section-desc">Comparing different emotion injection architectures explored during development. Corresponds to Section 5.1 and the failure analysis in Appendix C of the manuscript.</p>
+
+      <!-- Ablation Sample 1 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">Sample text 1 — I was really disappointed about what happened, but the more I think about it, the more angry I feel.</div>
+        <div class="tag-row">
+          <div class="tag-group">
+            <div class="emotion-label">Emotion Transition</div>
+            <div class="emotion-transition">
+              <span class="emo-tag">Sad</span>
+              <span class="emo-arrow">&#10230;</span>
+              <span class="emo-tag">Angry</span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name">Linear</div>
+            <span class="arch-tag arch-linear">Linear</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1Linear.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">MLP+LoRA</div>
+            <span class="arch-tag arch-mlplora">MLP+LoRA</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1mlp_lora.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">MLP-Add</div>
+            <span class="arch-tag arch-mlpadd">MLP-Add</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1mlp_add.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">FiLM</div>
+            <span class="arch-tag arch-film">FiLM</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1FiLM.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Norm Clamp</div>
+            <span class="arch-tag arch-normclamp">Norm Clamp</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1NormClamp.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name">Dir–Mag (Proposed)</div>
+            <span class="arch-tag arch-dirmag">Dir–Mag ★</span>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample1/1g.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ablation Sample 2 -->
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">Sample text 2 — The weather was so bad that day, and I was sadly walking home when I suddenly saw something that made me extremely angry.</div>
+        <div class="tag-row">
+          <div class="tag-group">
+            <div class="emotion-label">Emotion Transition</div>
+            <div class="emotion-transition">
+              <span class="emo-tag">Sad</span>
+              <span class="emo-arrow">&#10230;</span>
+              <span class="emo-tag">Angry</span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-linear">Linear</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/linear.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-mlplora">MLP+LoRA</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/mlp_lora.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-mlpadd">MLP-Add</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/mlp_add.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-film">FiLM</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/film.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-normclamp">Norm Clamp</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/norm_clamp.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="arch-tag arch-dirmag">Dir–Mag ★</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation/sample2/g.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tab 3: Ablation -->
+    <div class="tab-content" id="tab-ablation2">
+
+      <!-- Sub-section: Dual-Stage SFT -->
+      <h2 class="section-title">Dual-Stage SFT</h2>
+      <p class="section-desc">Comparing with and without flow-matching SFT in the dual-stage training pipeline. Corresponds to Section 5.3 of the manuscript.</p>
+
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">Sample text — I was really disappointed about what happened, but the more I think about it, the more angry I feel.</div>
+        <div class="tag-row">
+          <div class="tag-group">
+            <div class="emotion-label">Emotion Transition</div>
+            <div class="emotion-transition">
+              <span class="emo-tag">Sad</span>
+              <span class="emo-arrow">&#10230;</span>
+              <span class="emo-tag">Angry</span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name"><span class="sft-tag sft-woflow">w/o flow SFT</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation_sft/sample1/wo_flow_sft.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="sft-tag sft-emotra">EmoTra ★</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation_sft/sample1/emotra.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-section: Fixed Scale Epsilon -->
+      <h2 class="section-title" style="margin-top: 40px;">Fixed Scale &epsilon;</h2>
+      <p class="section-desc">Comparing different fixed scale &epsilon; values for the direction–magnitude injection. Corresponds to Section 5.4 of the manuscript.</p>
+
+      <div class="sample-card">
+        <div class="text-label">Text</div>
+        <div class="text-content">Sample text — She smiled at the gift but reading the mocking note inside made her rage</div>
+        <div class="tag-row">
+          <div class="tag-group">
+            <div class="emotion-label">Emotion Transition</div>
+            <div class="emotion-transition">
+              <span class="emo-tag">Happy</span>
+              <span class="emo-arrow">&#10230;</span>
+              <span class="emo-tag">Angry</span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-grid">
+          <div class="audio-item">
+            <div class="system-name"><span class="eps-tag eps-004">&epsilon; = 0.04 ★</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation_eps/sample1/04.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="eps-tag eps-010">&epsilon; = 0.10</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation_eps/sample1/10.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-item">
+            <div class="system-name"><span class="eps-tag eps-007">&epsilon; = 0.07 ★</span></div>
+            <audio controls preload="none">
+              <source src="audios/ablation_eps/sample1/07.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </main>
 
   <footer>
@@ -815,8 +1056,11 @@
   </aside>
 
   <script>
-    // Tab switching
+    // Tab switching + legend sidebar visibility
     const tabBar = document.getElementById('tabBar');
+    const legendSidebar = document.getElementById('legendSidebar');
+    const container = document.querySelector('.container');
+
     tabBar.addEventListener('click', (e) => {
       const btn = e.target.closest('.tab-btn');
       if (!btn) return;
@@ -824,11 +1068,20 @@
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById(btn.dataset.tab).classList.add('active');
+
+      // Hide legend sidebar on non-comparison tabs, show on Comparison
+      if (btn.dataset.tab === 'tab-comparison') {
+        legendSidebar.style.display = '';
+        container.style.marginRight = '';
+      } else {
+        legendSidebar.style.display = 'none';
+        container.style.marginRight = 'auto';
+      }
     });
 
     // Legend toggle (mobile)
     document.getElementById('legendToggle').addEventListener('click', () => {
-      document.getElementById('legendSidebar').classList.toggle('open');
+      legendSidebar.classList.toggle('open');
     });
   </script>
 </body>
