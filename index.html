@@ -544,7 +544,6 @@
     <!-- Tabs -->
     <div class="tab-bar" id="tabBar">
       <button class="tab-btn active" data-tab="tab-comparison">System Comparison</button>
-      <button class="tab-btn" data-tab="tab-ablation">Injection Architecture Comparison</button>
       <button class="tab-btn" data-tab="tab-ablation2">Ablation</button>
     </div>
 
@@ -774,127 +773,6 @@
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample8/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample8/g.wav" type="audio/wav"></audio></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Tab 2: Injection Architecture Comparison -->
-    <div class="tab-content" id="tab-ablation">
-      <h2 class="section-title">Injection Architecture Comparison</h2>
-      <p class="section-desc">Comparing different emotion injection architectures explored during development. Corresponds to Section 5.1 and the failure analysis in Appendix C of the manuscript.</p>
-
-      <!-- Ablation Sample 1 -->
-      <div class="sample-card">
-        <div class="text-label">Text</div>
-        <div class="text-content">Sample text 1 — I was really disappointed about what happened, but the more I think about it, the more angry I feel.</div>
-        <div class="tag-row">
-          <div class="tag-group">
-            <div class="emotion-label">Emotion Transition</div>
-            <div class="emotion-transition">
-              <span class="emo-tag">Sad</span>
-              <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Angry</span>
-            </div>
-          </div>
-        </div>
-        <div class="audio-grid">
-          <div class="audio-item">
-            <div class="system-name">Linear</div>
-            <span class="arch-tag arch-linear">Linear</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1Linear.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">MLP+LoRA</div>
-            <span class="arch-tag arch-mlplora">MLP+LoRA</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1mlp_lora.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">MLP-Add</div>
-            <span class="arch-tag arch-mlpadd">MLP-Add</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1mlp_add.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">FiLM</div>
-            <span class="arch-tag arch-film">FiLM</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1FiLM.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">Norm Clamp</div>
-            <span class="arch-tag arch-normclamp">Norm Clamp</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1NormClamp.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name">Dir–Mag (Proposed)</div>
-            <span class="arch-tag arch-dirmag">Dir–Mag ★</span>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample1/1g.wav" type="audio/wav">
-            </audio>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ablation Sample 2 -->
-      <div class="sample-card">
-        <div class="text-label">Text</div>
-        <div class="text-content">Sample text 2 — The weather was so bad that day, and I was sadly walking home when I suddenly saw something that made me extremely angry.</div>
-        <div class="tag-row">
-          <div class="tag-group">
-            <div class="emotion-label">Emotion Transition</div>
-            <div class="emotion-transition">
-              <span class="emo-tag">Sad</span>
-              <span class="emo-arrow">&#10230;</span>
-              <span class="emo-tag">Angry</span>
-            </div>
-          </div>
-        </div>
-        <div class="audio-grid">
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-linear">Linear</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/linear.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-mlplora">MLP+LoRA</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/mlp_lora.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-mlpadd">MLP-Add</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/mlp_add.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-film">FiLM</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/film.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-normclamp">Norm Clamp</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/norm_clamp.wav" type="audio/wav">
-            </audio>
-          </div>
-          <div class="audio-item">
-            <div class="system-name"><span class="arch-tag arch-dirmag">Dir–Mag ★</span></div>
-            <audio controls preload="none">
-              <source src="audios/ablation/sample2/g.wav" type="audio/wav">
-            </audio>
-          </div>
         </div>
       </div>
 
