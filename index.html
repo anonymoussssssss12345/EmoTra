@@ -265,13 +265,14 @@
       letter-spacing: 0.02em;
       color: #fff;
     }
-    .cat-tag.cat-a { background: #6b7280; }
+    .cat-tag.cat-a { background: #64748b; }
     .cat-tag.cat-b { background: #16a34a; }
-    .cat-tag.cat-c { background: #0d9488; }
-    .cat-tag.cat-d { background: #ea580c; }
-    .cat-tag.cat-e { background: #dc2626; }
-    .cat-tag.cat-f { background: #7c3aed; }
-    .cat-tag.cat-g { background: #4f46e5; }
+    .cat-tag.cat-c { background: #0891b2; }
+    .cat-tag.cat-d { background: #2563eb; }
+    .cat-tag.cat-e { background: #7c3aed; }
+    .cat-tag.cat-f { background: #c026d3; }
+    .cat-tag.cat-g { background: #e11d48; }
+    .cat-tag.cat-h { background: #ea580c; }
     .audio-item .method-tag {
       display: inline-block;
       font-size: 0.68rem;
@@ -426,13 +427,14 @@
       color: #fff;
       margin-top: 1px;
     }
-    .legend-key.key-a { background: #6b7280; }
+    .legend-key.key-a { background: #64748b; }
     .legend-key.key-b { background: #16a34a; }
-    .legend-key.key-c { background: #0d9488; }
-    .legend-key.key-d { background: #ea580c; }
-    .legend-key.key-e { background: #dc2626; }
-    .legend-key.key-f { background: #7c3aed; }
-    .legend-key.key-g { background: #4f46e5; }
+    .legend-key.key-c { background: #0891b2; }
+    .legend-key.key-d { background: #2563eb; }
+    .legend-key.key-e { background: #7c3aed; }
+    .legend-key.key-f { background: #c026d3; }
+    .legend-key.key-g { background: #e11d48; }
+    .legend-key.key-h { background: #ea580c; }
     .legend-item .legend-text {
       font-size: 0.78rem;
       color: var(--text);
@@ -575,6 +577,8 @@
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample1/b-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample1/c-emo.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample1/d-cy2cat.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample1/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample1/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample1/f-sys.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample1/g-Emotra.wav" type="audio/wav"></audio></div>
         </div>
@@ -603,6 +607,8 @@
           <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample2/b-qwen.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample2/d-MOSS.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-leve</span><audio controls preload="none"><source src="audios/comparison/sample2/wescon.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample2/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample2/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample2/f-sys.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample2/g-Emotra.wav" type="audio/wav"></audio></div>
         </div>
@@ -631,6 +637,8 @@
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample3/c-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/d-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-level</span><audio controls preload="none"><source src="audios/comparison/sample3/e.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample3/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample3/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><span class="volume-warn">&#9888; Volume Change</span><audio controls preload="none"><source src="audios/comparison/sample3/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -659,6 +667,8 @@
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample4/b-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample4/c-emov.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample4/d-qwen.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample4/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample4/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample4/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample4/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -687,6 +697,8 @@
           <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample5/b-qwen3.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample5/c-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample5/d-qwen.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample5/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample5/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample5/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample5/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -715,6 +727,8 @@
           <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample6/c-emovoice.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample6/d-cy2.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">WeSCon</div><span class="cat-tag cat-e">(e) Emo Prompt Speech + Word-level</span><audio controls preload="none"><source src="audios/comparison/sample6/e.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample6/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample6/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample6/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample6/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -743,6 +757,8 @@
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-b">(b) Instruct Only; No Speaker Info.</span><audio controls preload="none"><source src="audios/comparison/sample7/b-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoVoice</div><span class="cat-tag cat-c">(c) Instruct + Neutral Prompt Speech</span><audio controls preload="none"><source src="audios/comparison/sample7/c-emov.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample7/d-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample7/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample7/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample7/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample7/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -771,6 +787,8 @@
           <div class="audio-item"><div class="system-name">Qwen3-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-qwen.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">MOSS-TTS</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-moss.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">CosyVoice2</div><span class="cat-tag cat-d">(d) Emo Prompt Speech + Concat</span><audio controls preload="none"><source src="audios/comparison/sample8/d-cy2.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">ElevenLabs v3</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample8/h-elevenlabs.wav" type="audio/wav"></audio></div>
+          <div class="audio-item"><div class="system-name">gpt-4o-mini-tts</div><span class="cat-tag cat-h">(h) Closed-Source Commercial TTS</span><audio controls preload="none"><source src="audios/comparison/sample8/h-gpt4omini.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">Synthetic Data (ours)</div><span class="cat-tag cat-f">(f) Synthetic Data</span><audio controls preload="none"><source src="audios/comparison/sample8/f.wav" type="audio/wav"></audio></div>
           <div class="audio-item"><div class="system-name">EmoTra-TTS (Proposed)</div><span class="cat-tag cat-g">(g) Proposed EmoTra</span><audio controls preload="none"><source src="audios/comparison/sample8/g.wav" type="audio/wav"></audio></div>
         </div>
@@ -930,6 +948,19 @@
     <div class="legend-item">
       <div class="legend-key key-g">g</div>
       <div class="legend-text"><strong>Proposed EmoTra (ours)</strong><br><span>Continuous VAD conditioning with smooth intra-utterance transition</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-key key-h">h</div>
+      <div class="legend-text">
+        <strong>Closed-Source Commercial TTS</strong><br>
+        <span>Proprietary commercial TTS systems, including the two below</span>
+        <div class="legend-systems">
+          <span class="sys-chip">ElevenLabs v3</span>
+          <span class="sys-chip">gpt-4o-mini-tts</span>
+        </div>
+        <span style="display:block; margin-top:8px;"><strong>ElevenLabs v3</strong>: ElevenLabs' latest TTS system; emotion is controlled by manually inserting discrete Audio Tags. Following the official guidance, "Stability" is set to "Creative" to increase expressiveness.</span>
+        <span style="display:block; margin-top:6px;"><strong>gpt-4o-mini-tts</strong>: From OpenAI's GPT-4o audio family, accessed via API; emotion and transitions are controlled via a natural-language instruction prompt.</span>
+      </div>
     </div>
   </aside>
 
